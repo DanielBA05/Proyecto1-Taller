@@ -1,11 +1,17 @@
+"""En esta función tenemos R que es el máximo de vecs que se puede
+repetir un número, también está el dominio que sería num1 y a num2, el ámbito
+de las variables num1, num2, es el cuerpo de la función limite"""
+
 def limite(num1, num2, R):
-    # Añadir ceros si los números tienen 4 dígitos
+
     num1 = num1 * 10 if 1000 <= num1 < 10000 else num1
     num2 = num2 * 10 if 1000 <= num2 < 10000 else num2
 
-    # Concatenar los números y verificar si algún dígito excede el límite r
     comb = str(num1) + str(num2)
     return all(comb.count(i) <= R for i in set(comb))
+
+"""El dominio de C y R es cualquier número entero, y el ámbito de todas las 
+variables definidas dentro de la función generar están limitadas a esa función."""
 
 def generar(C: int, R: int):
     res=[]
